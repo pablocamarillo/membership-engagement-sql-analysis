@@ -2,7 +2,7 @@
 
 A MySQL learning and portfolio project exploring synthetic gym membership activity.
 
-**In Progress — First SQL Learning Milestone**
+**Working On It — Second SQL Learning Milestone**
 
 ## Project Overview
 
@@ -25,7 +25,7 @@ Understand how a membership-based organization can use relational data to evalua
 | Check-in/Checkout History | Visits potentially linking users and gyms, with timestamps and workout attributes. |
 | Subscription Plans | Monthly plan price and features; plan name may link to Users. |
 
-The `subscription_plans` table is implemented with a primary key. The other three tables and foreign-key relationships remain pending; their fields, types, counts, and relationships require validation. See [dataset documentation](data/README.md).
+The `subscription_plans` and `gym_locations` tables are implemented with primary keys, with three subscription records and 10 gym locations reported imported. The users and check-ins tables and their imports remain pending, along with relationship design and validation. See [dataset documentation](data/README.md).
 
 ## Technologies
 
@@ -38,7 +38,11 @@ The `subscription_plans` table is implemented with a primary key. The other thre
 
 CREATE DATABASE; USE; CREATE TABLE; VARCHAR, DECIMAL, TEXT; PRIMARY KEY; DESCRIBE; SELECT; COUNT; LOAD DATA LOCAL INFILE; basic SQL troubleshooting.
 
-Reported by the author on October 31, 2026. Only the supplied successful statements are saved as new scripts; additional DESCRIBE or COUNT examples have not been generated.
+Reported by the author on October 31, 2026. For that first lesson, only the supplied successful statements were saved as new scripts; additional DESCRIBE or COUNT examples were not generated.
+
+## Skills Practiced in the Second Lesson
+
+On November 1, 2026, the author created the second MySQL table, identified a text-versus-integer identifier mismatch, learned ALTER TABLE, corrected the primary-key column to VARCHAR(20), removed an incorrectly imported record with DELETE, imported 10 gym locations, and verified the data using SELECT and COUNT. See the [lesson and troubleshooting history](docs/gym_locations_lesson.md). These are reported results, not a new execution by Codex.
 
 ## Continuing SQL Skills
 
@@ -66,7 +70,7 @@ No analytical findings are available yet. Monthly plan prices and member counts 
 
 ## Project Status
 
-**In Progress — First SQL Learning Milestone**
+**Working On It — Second SQL Learning Milestone**
 
 Completed in the first hands-on lesson, as reported by the author on October 31, 2026:
 
@@ -75,7 +79,13 @@ Completed in the first hands-on lesson, as reported by the author on October 31,
 - `data/subscription_plans.csv` imported successfully.
 - Three subscription records verified and the first SELECT query executed.
 
-The remaining three tables, imports, foreign keys, business analysis, and advanced SQL are still in progress or pending. The overall project is not complete. See the [project plan](docs/project_plan.md) and [reported query result](results/README.md).
+Completed in the second hands-on lesson, as reported by the author on November 1, 2026:
+
+- Created `gym_locations`, then corrected `gym_id` from INT to VARCHAR(20) after encountering identifiers such as `gym_1`.
+- Used ALTER TABLE and removed the one incorrect `gym_id = '0'` record.
+- Successfully imported `data/gym_locations_data.csv` and verified the final **10 gym locations** with SELECT and COUNT.
+
+Remaining work: create the users table and import 5,000 users; create the check-ins table and import 300,000 check-ins; establish and validate relationships; then begin membership engagement analysis. The counts are planned targets, not completed imports. Business analysis and advanced SQL remain unfinished. See the [project plan](docs/project_plan.md), [first query result](results/README.md), and [second lesson](docs/gym_locations_lesson.md).
 
 ## Repository Structure
 
@@ -87,7 +97,10 @@ membership-engagement-sql-analysis/
 │   ├── README.md
 │   ├── 01_create_database.sql
 │   ├── 02_create_subscription_plans.sql
-│   └── 03_import_subscription_plans.sql
+│   ├── 03_import_subscription_plans.sql
+│   ├── 04_create_gym_locations.sql
+│   ├── 05_import_gym_locations.sql
+│   └── 06_verify_gym_locations.sql
 ├── sql/
 │   ├── 01_fundamentals/
 │   │   ├── .gitkeep
@@ -101,13 +114,14 @@ membership-engagement-sql-analysis/
 ├── results/
 │   └── README.md
 ├── docs/
-│   └── project_plan.md
+│   ├── project_plan.md
+│   └── gym_locations_lesson.md
 ├── README.md
 ├── .gitignore
 └── AGENTS.md
 ```
 
-This tree shows version-controlled files. Local CSVs and the author's untracked `schema/database_setup.sql` are not part of this milestone commit. The empty `.gitkeep` files preserve folder scaffolding; they contain no queries.
+This tree shows the documented repository structure, including the second-milestone files prepared for review. Local CSVs and the author's untracked `schema/database_setup.sql` are excluded from the proposed milestone changes. The empty `.gitkeep` files preserve folder scaffolding; they contain no queries.
 
 ## Getting Started
 
@@ -123,7 +137,7 @@ This tree shows version-controlled files. Local CSVs and the author's untracked 
 4. Review [schema/README.md](schema/README.md) and [Phase 1](docs/project_plan.md#phase-1-database-setup). The saved creation/import scripts document work already completed on the author's computer; do not rerun them against that database. Select `membership_analytics` as the active Workbench schema to review the saved SELECT. Use project-scoped access for future analysis where practical.
 5. Write your own SQL in the relevant `sql/` folder and save only verified, reviewable findings in `results/`.
 
-The import script retains the successful absolute Windows path and requires the local CSV plus client/server support for LOCAL. No automatic setup or import runner is provided. MySQL's internal data directory is separate from this repository and must never be copied into Git.
+The import scripts retain the successful absolute Windows paths and require the local CSV plus client/server support for LOCAL. No automatic setup or import runner is provided. MySQL's internal data directory is separate from this repository and must never be copied into Git.
 
 ## Author
 
