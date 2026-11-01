@@ -2,7 +2,7 @@
 
 A MySQL learning and portfolio project exploring synthetic gym membership activity.
 
-**In Progress — Environment and Repository Setup**
+**In Progress — First SQL Learning Milestone**
 
 ## Project Overview
 
@@ -25,16 +25,22 @@ Understand how a membership-based organization can use relational data to evalua
 | Check-in/Checkout History | Visits potentially linking users and gyms, with timestamps and workout attributes. |
 | Subscription Plans | Monthly plan price and features; plan name may link to Users. |
 
-These are proposed relationships, not validated keys or an implemented schema. Actual filenames, columns, types, row counts, uniqueness, and relationships must be inspected first. See [dataset documentation](data/README.md).
+The `subscription_plans` table is implemented with a primary key. The other three tables and foreign-key relationships remain pending; their fields, types, counts, and relationships require validation. See [dataset documentation](data/README.md).
 
 ## Technologies
 
-- **MySQL 8.4+** — planned relational storage and query execution; local server detected: 26.10.0.
+- **MySQL 8.4+** — relational storage and query execution; local server detected: 26.10.0.
 - **MySQL Workbench** — SQL editor and local connection management; installed version: 26.10.0.
-- **SQL** — the primary analysis language; queries will be written by the project author.
+- **SQL** — the primary analysis language; queries are written by the project author.
 - **Git and GitHub** — version control and portfolio presentation.
 
-## Planned SQL Skills
+## Skills Practiced in the First Lesson
+
+CREATE DATABASE; USE; CREATE TABLE; VARCHAR, DECIMAL, TEXT; PRIMARY KEY; DESCRIBE; SELECT; COUNT; LOAD DATA LOCAL INFILE; basic SQL troubleshooting.
+
+Reported by the author on October 31, 2026. Only the supplied successful statements are saved as new scripts; additional DESCRIBE or COUNT examples have not been generated.
+
+## Continuing SQL Skills
 
 - SELECT, WHERE, ORDER BY
 - GROUP BY and HAVING
@@ -60,9 +66,16 @@ No analytical findings are available yet. Monthly plan prices and member counts 
 
 ## Project Status
 
-**In Progress — Environment and Repository Setup**
+**In Progress — First SQL Learning Milestone**
 
-The local environment and repository foundation are prepared. CSV inspection, schema design, database creation, imports, and SQL analysis have not started. All five learning milestones remain open in the [project plan](docs/project_plan.md).
+Completed in the first hands-on lesson, as reported by the author on October 31, 2026:
+
+- MySQL database `membership_analytics` created.
+- First table `subscription_plans` created with a primary key on `subscription_plan`.
+- `data/subscription_plans.csv` imported successfully.
+- Three subscription records verified and the first SELECT query executed.
+
+The remaining three tables, imports, foreign keys, business analysis, and advanced SQL are still in progress or pending. The overall project is not complete. See the [project plan](docs/project_plan.md) and [reported query result](results/README.md).
 
 ## Repository Structure
 
@@ -71,10 +84,14 @@ membership-engagement-sql-analysis/
 ├── data/
 │   └── README.md
 ├── schema/
-│   └── README.md
+│   ├── README.md
+│   ├── 01_create_database.sql
+│   ├── 02_create_subscription_plans.sql
+│   └── 03_import_subscription_plans.sql
 ├── sql/
 │   ├── 01_fundamentals/
-│   │   └── .gitkeep
+│   │   ├── .gitkeep
+│   │   └── 01_select_subscription_plans.sql
 │   ├── 02_joins/
 │   │   └── .gitkeep
 │   ├── 03_business_analysis/
@@ -90,7 +107,7 @@ membership-engagement-sql-analysis/
 └── AGENTS.md
 ```
 
-The empty `.gitkeep` files preserve planned SQL folders in Git; they contain no queries.
+This tree shows version-controlled files. Local CSVs and the author's untracked `schema/database_setup.sql` are not part of this milestone commit. The empty `.gitkeep` files preserve folder scaffolding; they contain no queries.
 
 ## Getting Started
 
@@ -103,10 +120,10 @@ The empty `.gitkeep` files preserve planned SQL folders in Git; they contain no 
 
 2. Use an existing MySQL 8.4+ installation and MySQL Workbench. On the author's computer, `Local MySQL Development` connects to `127.0.0.1:3306`. Enter credentials only in the local client; never put them in repository files.
 3. Read [data/README.md](data/README.md), download the four CSVs separately from Kaggle, and keep them local under `data/`. Raw datasets are excluded from Git by default.
-4. Inspect the files and follow [Phase 1](docs/project_plan.md#phase-1-database-setup). Agree on validated keys and types before creating the project database or importing data. Use a project-scoped account for future analysis where practical.
+4. Review [schema/README.md](schema/README.md) and [Phase 1](docs/project_plan.md#phase-1-database-setup). The saved creation/import scripts document work already completed on the author's computer; do not rerun them against that database. Select `membership_analytics` as the active Workbench schema to review the saved SELECT. Use project-scoped access for future analysis where practical.
 5. Write your own SQL in the relevant `sql/` folder and save only verified, reviewable findings in `results/`.
 
-There is no database setup script yet. MySQL's internal data directory is separate from this repository and must never be copied into Git.
+The import script retains the successful absolute Windows path and requires the local CSV plus client/server support for LOCAL. No automatic setup or import runner is provided. MySQL's internal data directory is separate from this repository and must never be copied into Git.
 
 ## Author
 

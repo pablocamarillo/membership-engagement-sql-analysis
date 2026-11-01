@@ -1,6 +1,6 @@
 # Project Plan
 
-**In Progress — Environment and Repository Setup**
+**In Progress — First SQL Learning Milestone**
 
 The author will personally write the SQL. Codex supports setup, documentation, Git, and explanation/debugging; it does not complete analytical exercises without an explicit request.
 
@@ -13,24 +13,37 @@ The author will personally write the SQL. Codex supports setup, documentation, G
 
 Repository publication is verified by Git history and the repository remote. Workbench connectivity was reported successful by the author; this repository setup did not repeat a GUI login or modify any server settings.
 
+## First Hands-on Lesson — Recorded October 31, 2026
+
+- MySQL database `membership_analytics` created.
+- First table `subscription_plans` created with a primary key on `subscription_plan`.
+- `data/subscription_plans.csv` imported successfully.
+- Three subscription records verified and the first SELECT query executed.
+
+Skills reported learned: CREATE DATABASE; USE; CREATE TABLE; VARCHAR, DECIMAL, TEXT; PRIMARY KEY; DESCRIBE; SELECT; COUNT; LOAD DATA LOCAL INFILE; basic SQL troubleshooting.
+
+Evidence: the author supplied the successful statements and three-row output. Publication uses static review only; the database and import were not rerun. See [saved results](../results/README.md). Learning COUNT does not mark all aggregation work complete.
+
 ## Phase 1: Database Setup
 
-**Not started**
+**In progress — first table imported**
 
 - [ ] Download and inspect the four CSV files.
 - [ ] Validate column names and data types.
 - [ ] Design the relational schema using verified keys and grain.
-- [ ] Create the MySQL project database after review.
-- [ ] Import data.
+- [x] Create `membership_analytics` — reported successful by the author.
+- [x] Create `subscription_plans` with VARCHAR, DECIMAL, TEXT and a PRIMARY KEY.
+- [x] Import the subscription plan CSV and verify three records.
+- [ ] Create and import the remaining three tables.
 - [ ] Validate row counts and relationships against the source files.
 
 Completion evidence: inspected source inventory, reviewed schema, import method, and reconciled counts. Existing server installation does not complete this milestone.
 
 ## Phase 2: SQL Fundamentals
 
-**Not started**
+**In progress — first SELECT executed**
 
-- [ ] SELECT
+- [x] SELECT subscription plan names and monthly prices.
 - [ ] Filtering
 - [ ] Sorting
 - [ ] Aggregations
