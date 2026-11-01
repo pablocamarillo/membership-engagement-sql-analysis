@@ -1,0 +1,43 @@
+# Credentials and machine-local settings
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*credentials*.ini
+*secrets*.json
+.my.cnf
+.mylogin.cnf
+connections.xml
+.vscode/
+.idea/
+
+# Raw datasets require explicit review before publication
+/data/**
+!/data/README.md
+
+# Database storage, backups, and dumps (not analytical SQL)
+/backups/
+/dumps/
+/mysql-data/
+*.dump
+*.bak
+*.sql.gz
+*.sql.zip
+*.ibd
+ibdata*
+
+# Temporary files and large generated bundles; results and SQL remain tracked
+*.tmp
+*.temp
+*.log
+*.swp
+*~
+Thumbs.db
+.DS_Store
+*.zip
+*.7z
+*.tar
+*.tar.gz
