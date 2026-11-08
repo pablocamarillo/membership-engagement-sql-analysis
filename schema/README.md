@@ -11,7 +11,7 @@ The author reported successful creation of `membership_analytics` and `subscript
 | [05_import_gym_locations.sql](05_import_gym_locations.sql) | Author's successful gym locations CSV import; do not rerun locally. |
 | [06_verify_gym_locations.sql](06_verify_gym_locations.sql) | Author's SELECT and COUNT verification; reported count 10. |
 
-These are lesson records, not an idempotent migration system. Do not recreate the existing database/table or rerun the import. For table, import, and SELECT statements, select `membership_analytics` as the active schema in Workbench first. The author also reported learning USE; the existing local `database_setup.sql` is preserved unchanged and remains untracked.
+These are lesson records, not an idempotent migration system. Do not recreate the existing database/table or rerun the import. For table, import, and SELECT statements, select `membership_analytics` as the active schema in Workbench first. The author also reported learning USE; the tracked [database_setup.sql](database_setup.sql) is preserved unchanged. It contains USE, SELECT DATABASE(), SHOW TABLES, and a read-only check of the local_infile setting.
 
 The import path is the exact successful client-side path on the author's Quantum SSD. Future separate environments must adapt that path. LOCAL must be supported by the client and server; these scripts do not change either configuration. The reported CSV used comma-separated fields, optional double quotes, an LF line delimiter, and one header row. No claim is made that other files use identical settings.
 

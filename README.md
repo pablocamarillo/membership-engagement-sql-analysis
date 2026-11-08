@@ -44,6 +44,14 @@ Reported by the author on October 31, 2026. For that first lesson, only the supp
 
 On November 1, 2026, the author created the second MySQL table, identified a text-versus-integer identifier mismatch, learned ALTER TABLE, corrected the primary-key column to VARCHAR(20), removed an incorrectly imported record with DELETE, imported 10 gym locations, and verified the data using SELECT and COUNT. See the [lesson and troubleshooting history](docs/gym_locations_lesson.md). These are reported results, not a new execution by Codex.
 
+## Saved Fundamentals Lessons
+
+- [SELECT subscription plans](sql/01_fundamentals/01_select_subscription_plans.sql): completed SELECT/FROM lesson.
+- [Filter gym locations](sql/01_fundamentals/02_filter_gym_locations.sql): author-reported completed SELECT/WHERE exercise for Budget gyms, with brief clause explanations.
+- [Sort subscription plans](sql/01_fundamentals/03_sort_subscription_plans.sql): starter for the next lesson; the author will write the ORDER BY query.
+
+The filtering exercise is recorded from the author's report; no SQL was executed while saving these files. Sorting remains pending.
+
 ## Continuing SQL Skills
 
 - SELECT, WHERE, ORDER BY
@@ -100,11 +108,14 @@ membership-engagement-sql-analysis/
 │   ├── 03_import_subscription_plans.sql
 │   ├── 04_create_gym_locations.sql
 │   ├── 05_import_gym_locations.sql
-│   └── 06_verify_gym_locations.sql
+│   ├── 06_verify_gym_locations.sql
+│   └── database_setup.sql
 ├── sql/
 │   ├── 01_fundamentals/
 │   │   ├── .gitkeep
-│   │   └── 01_select_subscription_plans.sql
+│   │   ├── 01_select_subscription_plans.sql
+│   │   ├── 02_filter_gym_locations.sql
+│   │   └── 03_sort_subscription_plans.sql
 │   ├── 02_joins/
 │   │   └── .gitkeep
 │   ├── 03_business_analysis/
@@ -121,7 +132,7 @@ membership-engagement-sql-analysis/
 └── AGENTS.md
 ```
 
-This tree shows the documented repository structure, including the second-milestone files prepared for review. Local CSVs and the author's untracked `schema/database_setup.sql` are excluded from the proposed milestone changes. The empty `.gitkeep` files preserve folder scaffolding; they contain no queries.
+This tree shows the documented repository structure, including the saved fundamentals lessons. Local CSVs remain excluded from Git. The tracked [schema/database_setup.sql](schema/database_setup.sql) contains schema selection and diagnostic queries and is preserved unchanged. The empty `.gitkeep` files preserve folder scaffolding; they contain no queries.
 
 ## Getting Started
 

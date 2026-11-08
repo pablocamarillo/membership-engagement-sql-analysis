@@ -62,8 +62,8 @@ Completion evidence: inspected source inventory, reviewed schema, import method,
 
 - [x] SELECT subscription plan names and monthly prices.
 - [x] SELECT gym IDs, locations and types, and COUNT the imported gym rows (10).
-- [ ] Filtering
-- [ ] Sorting
+- [x] Basic SELECT/WHERE filtering for Budget gyms — author-reported completed exercise; see [saved query](../sql/01_fundamentals/02_filter_gym_locations.sql).
+- [ ] Sorting — [starter file](../sql/01_fundamentals/03_sort_subscription_plans.sql) saved; the author will write the ORDER BY query.
 - [ ] Aggregations
 - [ ] GROUP BY and HAVING
 

@@ -8,9 +8,9 @@
 - Metadata verification: October 31, 2026, via [Kaggle's dataset metadata endpoint](https://www.kaggle.com/api/v1/datasets/view/mexwell/gym-check-ins-and-user-metadata).
 - Reported license: **CC0: Public Domain** (`licenseName` in Kaggle metadata). Review the dataset page and any included notices when downloading; record any differences before redistribution.
 - Synthetic gym data; no real Delta Defense or USCCA customer data.
-- Download date, dataset version, actual filenames, row counts, and file checksums: **not yet recorded**.
+- Local filenames are recorded below. Download date, dataset version, independently verified CSV row counts, and file checksums: **not yet recorded**.
 
-Four CSV files are now present locally: `users_data.csv`, `gym_locations_data.csv`, `checkin_checkout_history_updated.csv`, and `subscription_plans.csv`. The author reported importing three subscription records and verifying plan names and prices on October 31, 2026. The other files have not been claimed as inspected or imported; publication did not read or copy raw CSV contents. Raw data stays local and is excluded from Git. Do not force-add CSVs without reviewing the license and obtaining approval to publish the files.
+Four CSV files are now present locally: `users_data.csv`, `gym_locations_data.csv`, `checkin_checkout_history_updated.csv`, and `subscription_plans.csv`. The author reported importing three subscription records and verifying plan names and prices on October 31, 2026. On November 1, 2026, the author also reported successfully importing 10 gym locations and verifying them with SELECT and COUNT. See the [saved setup/import scripts](../schema/README.md) and [gym locations lesson](../docs/gym_locations_lesson.md). These are author-reported database counts, not a fresh verification. Users and check-in history imports remain pending; their CSVs have not been claimed as inspected. This documentation update did not execute SQL or read or copy raw CSV contents. Raw data stays local and is excluded from Git. Do not force-add CSVs without reviewing the license and obtaining approval to publish the files.
 
 ## Expected Structure — Not Yet Verified Against CSVs
 
@@ -21,7 +21,7 @@ Four CSV files are now present locally: `users_data.csv`, `gym_locations_data.cs
 | Check-in/Checkout History | `user_id`, `gym_id`, `checkin_time`, `checkout_time`, `workout_type`, `calories_burned` |
 | Subscription Plans | `subscription_plan`, `price_per_month`, `features` |
 
-Potential relationships: Users to visits through `user_id`; Gym Locations to visits through `gym_id`; Subscription Plans to Users through `subscription_plan`. These relationships and cardinalities must be validated. The subscription table now uses `subscription_plan VARCHAR(50) PRIMARY KEY`, `price_per_month DECIMAL(10,2)`, and `features TEXT`, as reported by the author. Other table definitions and foreign keys remain pending.
+Potential relationships: Users to visits through `user_id`; Gym Locations to visits through `gym_id`; Subscription Plans to Users through `subscription_plan`. These relationships and cardinalities must be validated. The subscription table now uses `subscription_plan VARCHAR(50) PRIMARY KEY`, `price_per_month DECIMAL(10,2)`, and `features TEXT`, as reported by the author. The gym_locations table is also implemented with `gym_id VARCHAR(20) PRIMARY KEY`, `location VARCHAR(50)`, `gym_type VARCHAR(50)`, and `facilities TEXT`; see the [saved definition](../schema/04_create_gym_locations.sql). Users and check-ins table definitions and foreign keys remain pending.
 
 ## Before Schema Design
 
